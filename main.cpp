@@ -1,47 +1,23 @@
-#include "Movie_Functions.h"
-#include "Movie_Methods.h"
+#include "Math.h"
+#include<iostream>
 
-int main() {
-    Movie ep5;
-    ep5.set_name("Star Wars: Episode V - The Empire Strikes Back");
-    ep5.set_score(8.7);
-    ep5.set_year(1980);
-    ep5.set_length(124);
+using namespace std;
 
-    Movie ep4;
-    ep4.set_name("Star Wars: Episode IV - A New Hope");
-    ep4.set_score(8.6);
-    ep4.set_year(1977);
-    ep4.set_length(121);
-
-    Movie ep6;
-    ep6.set_name("Star Wars: Episode VI - Return of the Jedi");
-    ep6.set_score(8.3);
-    ep6.set_year(1983);
-    ep6.set_length(131);
-
-    printf(
-        R"(
-ep4, ep5 comparisons:
-name        : %d
-year        : %d
-score       : %d
-length      : %d
-passed years: %d
-)",
-movie_compare_name(ep4, ep5),
-movie_compare_year(ep4, ep5),
-movie_compare_score(ep4, ep5),
-movie_compare_length(ep4, ep5),
-movie_compare_passed_years(ep4, ep5));
-
-    MovieSeries series;
-    series.init();
-    series.add(&ep5);
-    series.add(&ep4);
-    series.add(&ep6);
+int main()
+{
+	printf("%d\n", Math::Add(2, 3));
+	printf("%d\n", Math::Add(2, 3, 4));
+	printf("%d\n", Math::Add(2.0, 3.0));
+	printf("%d\n", Math::Add(2.0, 3.0, 4.0));
+	printf("%d\n", Math::Mul(2, 5));
+	printf("%d\n", Math::Mul(2, 5, 2));
+	printf("%d\n", Math::Mul(3.0, 5.0));
+	printf("%d\n", Math::Mul(3.0, 5.0, 2.0));
+	printf("%d\n", Math::Add(4, 1, 2, 3, 4));
 
 
-    series.sort();
-    series.print();
+	printf("%s\n", Math::Add(nullptr, nullptr));
+	printf("%s\n", Math::Add(nullptr, "nume"));
+	printf("%s\n", Math::Add("nume", nullptr));
+	printf("%s\n", Math::Add("nume1", "nume2"));
 }
